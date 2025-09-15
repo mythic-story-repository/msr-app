@@ -4,7 +4,7 @@ export interface SearchParams {
   archetype?: string;
 }
 
-export async function searchStories(_params: SearchParams) {
+export async function searchStories() {
   // Placeholder search returning empty list; replace with DB/search adapter.
   return { items: [] as Story[], total: 0 };
 }

@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStoryByIdAction } from '@/features/stories/server/detail-handler';
 
+type RouteContext = { params: Promise<{ id: string }> };
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: RouteContext
 ) {
+  const { id } = await params;
   try {
-    const result = await getStoryByIdAction(params.id);
+    const result = await getStoryByIdAction(id);
 
     if (result.ok) {
       return NextResponse.json({ story: result.story });
