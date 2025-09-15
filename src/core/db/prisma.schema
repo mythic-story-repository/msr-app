@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Story {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Core content
+  content   String
+  language  String   @default("en")
+  
+  // Experience classification
+  experienceSource String @default("other") // 'psychedelic' | 'near-death-experience' | 'dream' | 'mystical-opening' | 'ritual-initiation' | 'other'
+  
+  // Categorization
+  archetypes String // JSON array of archetype slugs
+  motifs     String // JSON array of motif strings
+  feelings   String // JSON array of feeling strings
+  
+  // Context (optional structured data)
+  context    String?  // JSON string for setting/state info
+  
+  // Consent & licensing
+  license      String  // 'CC0' | 'CC BY'
+  aiUseOptOut  Boolean @default(false)
+  visibility   String  @default("public") // 'public' | 'link-only' | 'private'
+  anonLevel    String  @default("anonymous") // 'none' | 'pseudonym' | 'anonymous'
+  pseudonym    String? // Only used when anonLevel is 'pseudonym'
+  
+  @@map("stories")
+}
+
+model Archetype {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  label       String
+  description String?
+  
+  @@map("archetypes")
+}
