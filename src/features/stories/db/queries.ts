@@ -1,6 +1,7 @@
 import { prisma } from '@/core/db/client';
 import type { Story } from '@/core/domain/story';
 import type { Archetype } from '@/core/domain/archetype';
+import type { Archetype as ArchetypeModel } from '@prisma/client';
 
 export interface StoryFilter {
   archetypes?: string[];
@@ -105,11 +106,11 @@ export async function createArchetype(data: {
 }
 
 export async function getArchetypes(): Promise<Archetype[]> {
-  const dbArchetypes = await prisma.archetype.findMany({
+  const dbArchetypes: ArchetypeModel[] = await prisma.archetype.findMany({
     orderBy: { label: 'asc' },
   });
   
-  return dbArchetypes.map(dbArchetype => ({
+  return dbArchetypes.map((dbArchetype: ArchetypeModel): Archetype => ({
     id: dbArchetype.id,
     slug: dbArchetype.slug,
     label: dbArchetype.label,
