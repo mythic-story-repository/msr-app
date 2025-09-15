@@ -73,7 +73,7 @@ export async function getStories(filter: StoryFilter = {}): Promise<Story[]> {
 
   // Filter by archetypes if specified (since we store as JSON)
   if (filter.archetypes && filter.archetypes.length > 0) {
-    stories = stories.filter(story => 
+    stories = stories.filter((story: Story) => 
       filter.archetypes!.some(archetype => 
         story.archetypes.includes(archetype)
       )
