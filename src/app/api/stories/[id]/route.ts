@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStoryByIdAction } from '@/features/stories/server/detail-handler';
 
+export const runtime = 'nodejs';
+
 type RouteContext = { params: Promise<{ id: string }> };
 
 export async function GET(
