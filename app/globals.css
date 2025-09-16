@@ -1,77 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
+@theme {
   --radius: 16px;
 
-  --background: 0 0% 99%;
-  --foreground: 222 20% 12%;
+  --color-background: hsl(0 0% 99%);
+  --color-foreground: hsl(222 20% 12%);
 
-  --card: 0 0% 100%;
-  --card-foreground: 222 20% 12%;
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 20% 12%);
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 20% 12%;
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222 20% 12%);
 
-  --muted: 220 15% 96%;
-  --muted-foreground: 222 10% 40%;
+  --color-muted: hsl(220 15% 96%);
+  --color-muted-foreground: hsl(222 10% 40%);
 
-  --accent: 220 15% 96%;
-  --accent-foreground: 222 20% 12%;
+  --color-accent: hsl(220 15% 96%);
+  --color-accent-foreground: hsl(222 20% 12%);
 
-  --primary: 267 84% 58%;
-  --primary-foreground: 0 0% 100%;
+  --color-primary: hsl(267 84% 58%);
+  --color-primary-foreground: hsl(0 0% 100%);
 
-  --secondary: 222 14% 18%;
-  --secondary-foreground: 210 40% 98%;
+  --color-secondary: hsl(222 14% 18%);
+  --color-secondary-foreground: hsl(210 40% 98%);
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
 
-  --border: 220 14% 91%;
-  --input: 220 14% 91%;
-  --ring: 267 84% 58%;
+  --color-border: hsl(220 14% 91%);
+  --color-input: hsl(220 14% 91%);
+  --color-ring: hsl(267 84% 58%);
 }
 
-.dark {
-  --background: 222 14% 10%;
-  --foreground: 210 40% 98%;
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: hsl(222 14% 10%);
+    --color-foreground: hsl(210 40% 98%);
 
-  --card: 222 14% 11%;
-  --card-foreground: 210 40% 98%;
+    --color-card: hsl(222 14% 11%);
+    --color-card-foreground: hsl(210 40% 98%);
 
-  --popover: 222 14% 11%;
-  --popover-foreground: 210 40% 98%;
+    --color-popover: hsl(222 14% 11%);
+    --color-popover-foreground: hsl(210 40% 98%);
 
-  --muted: 222 14% 16%;
-  --muted-foreground: 220 10% 70%;
+    --color-muted: hsl(222 14% 16%);
+    --color-muted-foreground: hsl(220 10% 70%);
 
-  --accent: 222 14% 16%;
-  --accent-foreground: 210 40% 98%;
+    --color-accent: hsl(222 14% 16%);
+    --color-accent-foreground: hsl(210 40% 98%);
 
-  --primary: 267 84% 65%;
-  --primary-foreground: 0 0% 100%;
+    --color-primary: hsl(267 84% 65%);
+    --color-primary-foreground: hsl(0 0% 100%);
 
-  --secondary: 222 14% 18%;
-  --secondary-foreground: 210 40% 98%;
+    --color-secondary: hsl(222 14% 18%);
+    --color-secondary-foreground: hsl(210 40% 98%);
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
+    --color-destructive: hsl(0 84% 60%);
+    --color-destructive-foreground: hsl(0 0% 100%);
 
-  --border: 222 14% 22%;
-  --input: 222 14% 22%;
-  --ring: 267 84% 65%;
+    --color-border: hsl(222 14% 22%);
+    --color-input: hsl(222 14% 22%);
+    --color-ring: hsl(267 84% 65%);
+  }
 }
 
-@layer base {
-  * { @apply border-border; }
-  html, body { @apply bg-background text-foreground; }
+* {
+  border-color: var(--color-border);
 }
 
-@layer utilities {
-  .shadow-card { box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06); }
-  .shadow-focus { box-shadow: 0 0 0 3px hsl(var(--ring) / .35); }
-  .text-pretty { text-wrap: pretty; }
-  .text-balance { text-wrap: balance; }
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.shadow-card {
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+}
+
+.shadow-focus {
+  box-shadow: 0 0 0 3px hsl(var(--color-ring) / .35);
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
