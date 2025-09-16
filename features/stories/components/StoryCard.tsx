@@ -9,7 +9,7 @@ export default function StoryCard({ story }: { story: Story }) {
   return (
     <Link href={`/stories/${story.id}`}>
       <article className="rounded-2xl border p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-        <p className="whitespace-pre-wrap text-gray-800 mb-3">{truncatedContent}</p>
+        <p className="whitespace-pre-wrap text-foreground mb-3">{truncatedContent}</p>
         
         <div className="flex flex-wrap gap-2 mb-2">
           {story.archetypes.map((archetype) => (
@@ -23,7 +23,7 @@ export default function StoryCard({ story }: { story: Story }) {
           ))}
         </div>
         
-        <div className="text-xs text-gray-500 flex justify-between items-center">
+        <div className="text-xs text-muted-foreground flex justify-between items-center">
           <span>{new Date(story.createdAt).toLocaleDateString()}</span>
           <span className="capitalize">{story.license}</span>
         </div>

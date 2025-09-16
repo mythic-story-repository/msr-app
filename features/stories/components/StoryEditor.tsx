@@ -147,7 +147,7 @@ export default function StoryEditor() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-lg shadow-sm border">
+      <div className="bg-card rounded-lg shadow-sm border">
         {error && (
           <div className="m-6 mb-0 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
             {error}
@@ -158,13 +158,13 @@ export default function StoryEditor() {
           {/* Editor Section */}
           <div>
             <div className="flex justify-between items-center mb-3">
-              <label htmlFor="content" className="block text-lg font-medium text-gray-900">
+              <label htmlFor="content" className="block text-lg font-medium text-card-foreground">
                 Your Story *
               </label>
               <button
                 type="button"
                 onClick={toggleFullscreen}
-                className="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                className="px-3 py-1 text-sm bg-muted hover:bg-muted/80 text-muted-foreground rounded-lg transition-colors"
               >
                 Fullscreen
               </button>
@@ -187,7 +187,7 @@ export default function StoryEditor() {
 
           {/* Experience Source */}
           <div>
-            <label className="block text-lg font-medium text-gray-900 mb-3">
+            <label className="block text-lg font-medium text-card-foreground mb-3">
               What is this story from? *
             </label>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -217,7 +217,7 @@ export default function StoryEditor() {
 
           {/* Archetypes */}
           <div>
-            <label className="block text-lg font-medium text-gray-900 mb-3">
+            <label className="block text-lg font-medium text-card-foreground mb-3">
               Archetypes *
             </label>
             <p className="text-sm text-gray-600 mb-4">
@@ -250,7 +250,7 @@ export default function StoryEditor() {
 
           {/* Sharing & Privacy */}
           <div className="border-t pt-8">
-            <h3 className="text-lg font-medium text-gray-900 mb-6">Sharing & Privacy</h3>
+            <h3 className="text-lg font-medium text-card-foreground mb-6">Sharing & Privacy</h3>
             
             <div className="space-y-6">
               {/* License & AI Intent */}

@@ -7,10 +7,10 @@ interface StoryDetailProps {
 export default function StoryDetail({ story }: StoryDetailProps) {
   return (
     <article className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-lg shadow-sm border p-8">
+      <div className="bg-card rounded-lg shadow-sm border p-8">
         {/* Story Content */}
         <div className="prose prose-lg max-w-none mb-8">
-          <p className="whitespace-pre-wrap text-gray-800 leading-relaxed">
+          <p className="whitespace-pre-wrap text-foreground leading-relaxed">
             {story.content}
           </p>
         </div>
@@ -20,7 +20,7 @@ export default function StoryDetail({ story }: StoryDetailProps) {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Archetypes */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Archetypes</h3>
+              <h3 className="font-semibold text-card-foreground mb-3">Archetypes</h3>
               <div className="flex flex-wrap gap-2">
                 {story.archetypes.map((archetype) => (
                   <span
@@ -35,25 +35,25 @@ export default function StoryDetail({ story }: StoryDetailProps) {
 
             {/* Story Info */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Story Details</h3>
+              <h3 className="font-semibold text-card-foreground mb-3">Story Details</h3>
               <dl className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <dt className="text-gray-600">Published:</dt>
-                  <dd className="text-gray-900">
+                  <dt className="text-muted-foreground">Published:</dt>
+                  <dd className="text-card-foreground">
                     {new Date(story.createdAt).toLocaleDateString()}
                   </dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-gray-600">License:</dt>
-                  <dd className="text-gray-900 capitalize">{story.license}</dd>
+                  <dt className="text-muted-foreground">License:</dt>
+                  <dd className="text-card-foreground capitalize">{story.license}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-gray-600">Language:</dt>
-                  <dd className="text-gray-900 uppercase">{story.language}</dd>
+                  <dt className="text-muted-foreground">Language:</dt>
+                  <dd className="text-card-foreground uppercase">{story.language}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-gray-600">Visibility:</dt>
-                  <dd className="text-gray-900 capitalize">{story.visibility}</dd>
+                  <dt className="text-muted-foreground">Visibility:</dt>
+                  <dd className="text-card-foreground capitalize">{story.visibility}</dd>
                 </div>
               </dl>
             </div>
@@ -65,7 +65,7 @@ export default function StoryDetail({ story }: StoryDetailProps) {
               <div className="grid md:grid-cols-2 gap-6">
                 {story.motifs.length > 0 && (
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Motifs</h3>
+                    <h3 className="font-semibold text-card-foreground mb-3">Motifs</h3>
                     <div className="flex flex-wrap gap-2">
                       {story.motifs.map((motif, index) => (
                         <span
@@ -81,7 +81,7 @@ export default function StoryDetail({ story }: StoryDetailProps) {
 
                 {story.feelings.length > 0 && (
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Feelings</h3>
+                    <h3 className="font-semibold text-card-foreground mb-3">Feelings</h3>
                     <div className="flex flex-wrap gap-2">
                       {story.feelings.map((feeling, index) => (
                         <span
@@ -101,18 +101,18 @@ export default function StoryDetail({ story }: StoryDetailProps) {
           {/* Context */}
           {story.context && (
             <div className="mt-6 pt-6 border-t">
-              <h3 className="font-semibold text-gray-900 mb-3">Context</h3>
-              <div className="bg-gray-50 rounded-lg p-4">
+              <h3 className="font-semibold text-card-foreground mb-3">Context</h3>
+              <div className="bg-muted rounded-lg p-4">
                 {story.context.setting && (
                   <div className="mb-2">
-                    <span className="font-medium text-gray-700">Setting: </span>
-                    <span className="text-gray-600">{story.context.setting}</span>
+                    <span className="font-medium text-card-foreground">Setting: </span>
+                    <span className="text-muted-foreground">{story.context.setting}</span>
                   </div>
                 )}
                 {story.context.state && (
                   <div>
-                    <span className="font-medium text-gray-700">State: </span>
-                    <span className="text-gray-600">{story.context.state}</span>
+                    <span className="font-medium text-card-foreground">State: </span>
+                    <span className="text-muted-foreground">{story.context.state}</span>
                   </div>
                 )}
               </div>

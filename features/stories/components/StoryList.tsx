@@ -20,7 +20,7 @@ export default function StoryList({
       
       {stories.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">{emptyMessage}</p>
+          <p className="text-muted-foreground text-lg">{emptyMessage}</p>
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

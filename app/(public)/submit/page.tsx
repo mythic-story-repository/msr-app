@@ -10,7 +10,7 @@ export default function SubmitPage() {
             Your story matters. Share your experience to contribute to our collective understanding and help others find
             meaning in their own journeys.
           </p>
-          <p className="text-sm text-muted-foreground/70 mt-2">Offerings, not uploads. Consent is sacred.</p>
+          <p className="text-sm text-muted-foreground mt-2">Offerings, not uploads. Consent is sacred.</p>
         </div>
         <StoryEditor />
       </div>
