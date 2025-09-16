@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed": "tsx src/core/db/seed.ts",
-    "postinstall": "prisma generate --schema=src/core/db/prisma.schema",
-    "vercel-build": "prisma generate --schema=src/core/db/prisma.schema && prisma migrate deploy --schema=src/core/db/prisma.schema && next build"
+    "seed": "tsx core/db/seed.ts",
+    "postinstall": "prisma generate --schema=core/db/prisma.schema",
+    "vercel-build": "prisma generate --schema=core/db/prisma.schema && prisma migrate deploy --schema=core/db/prisma.schema && next build"
   },
   "dependencies": {
     "@prisma/client": "^6.16.1",

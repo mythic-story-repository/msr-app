@@ -1,4 +1,4 @@
-import { prisma } from '../../../src/core/db/client';
+import { prisma } from '@core/db/client';
 import type { Story } from '@core/domain/story';
 import type { Archetype } from '@core/domain/archetype';
 
