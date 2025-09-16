@@ -25,4 +25,4 @@ This repo contains the first public web application for MSR, built with Next.js,
 1. Clone the repo  
    ```bash
    git clone https://github.com/mythic-story-repository/msr-app.git
-   cd msr-app
+   cd msr-app/web
